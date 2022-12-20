@@ -14,14 +14,14 @@
 <body class="">
     <x-header></x-header>
     <div class="page post-page">
-        <form class="form" name = "postContent" action="/post" method="post">
+        <form class="form" name="postContent" action="/post" method="post">
             @csrf
             <textarea name="postContent" id="postContent" cols="30" rows="5" placeholder="いまどうしてる?"></textarea>
-             @error('postContent')
-                                    {{ $message }}
-                            @enderror
+            @error('postContent')
+            {{ $message }}
+            @enderror
             <div class="post-button">
-                <button class="button-white" id="postbtn" type = button>投稿する</button>
+                <button class="button-white" id="postbtn" type=submit>投稿する</button>
             </div>
         </form>
     </div>
@@ -29,7 +29,7 @@
 
 <script src="{{ asset('/js/app.js') }}"></script>
 
-<!-- Bug 4(JS) -->
+<!-- Bug 4(JS) 
 <script>
     window.onload = function(){
     const postbtnSubmit =  document.getElementById('postbtn');
@@ -50,19 +50,19 @@
         document.postContent.submit();
     });
 }
-</script> 
+</script> -->
 
 <style scoped>
     .post-page .form {
         display: flex;
         flex-direction: column;
     }
-    
+
     .post-page .post-button {
         text-align: end;
         margin: 20px 20px 0 0;
     }
-    
+
     .post-page button {
         height: 35px;
         width: 90px;
