@@ -32,3 +32,4 @@ if (logoutButton) {
 function isSp() {
     return window.screen.width <= SP_BREAKPOINT;
 }
+
