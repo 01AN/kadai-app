@@ -21,7 +21,7 @@
             {{ $message }}
             @enderror
             <div class="post-button">
-                <button class="button-white" id="postbtn" type=submit>投稿する</button>
+                <button class="button-white" id="postbtn" type=button>投稿する</button>
             </div>
         </form>
     </div>
@@ -29,28 +29,28 @@
 
 <script src="{{ asset('/js/app.js') }}"></script>
 
-<!-- Bug 4(JS) 
+<!-- Bug 4(JS) -->
 <script>
-    window.onload = function(){
-    const postbtnSubmit =  document.getElementById('postbtn');
-    const inputPost = document.getElementById('postContent');
+    window.onload = function () {
+        const postbtnSubmit = document.getElementById('postbtn');
+        const inputPost = document.getElementById('postContent');
 
-    postbtnSubmit.addEventListener('click',  function(event){
-        let message = [];
-        
-        if(inputPost.value==""){
-            message.push("投稿内容が未入力です。");
-        }else if(inputPost.value.length > 140){
-            message.push("入力可能文字数は140文字以内です。")
-        }
-        if(message.length > 0){
-            alert(message);
-            return;
-        }
-        document.postContent.submit();
-    });
-}
-</script> -->
+        postbtnSubmit.addEventListener('click', function (event) {
+            let message = [];
+
+            if (inputPost.value == "") {
+                message.push("投稿内容が未入力です。");
+            } else if (inputPost.value.length > 140) {
+                message.push("入力可能文字数は140文字以内です。")
+            }
+            if (message.length > 0) {
+                alert(message);
+                return;
+            }
+            document.postContent.submit();
+        });
+    }
+</script>
 
 <style scoped>
     .post-page .form {
