@@ -9,28 +9,78 @@
 
     <title>kadai-app | 新規登録</title>
 </head>
-<!-- ログイン画面 -->
+<!-- 新規登録画面 -->
 
 <body class="">
     <x-header></x-header>
     <div class="page login-page">
-        <form class="form" action="/login" method="post">
+        <form class="form" action="/signup" method="post" name="create">
             @csrf
+            <div class="form-item name">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" />
+            </div>
+            @error('name')
+            {{ $message }}
+            @enderror
             <div class="form-item email">
                 <label for="email">Email</label>
                 <input type="text" id="email" name="email" />
             </div>
+            @error('email')
+            {{ $message }}
+            @enderror
             <div class="form-item password">
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" />
             </div>
+            @error('password')
+            {{ $message }}
+            @enderror
             <div class="login-button">
-                <button class="button-white" type="submit">新規登録</button>
+                <button class="button-white" id="createbtn" type="submit">新規登録</button>
             </div>
         </form>
     </div>
 </body>
+
 <script src="{{ asset('/js/app.js') }}"></script>
+
+<script>
+    window.onload = function () {
+        const postbtnSubmit = document.getElementById('createbtn');
+        const inputName = document.getElementById('name');
+        const inputEmail = document.getElementById('email');
+        const inputPassword = document.getElementById('password');
+
+        postbtnSubmit.addEventListener('click', function (event) {
+            let message = [];
+
+            if (inputName.value == "") {
+                message.push("名前が未入力です。");
+            }
+
+            if (inputEmail.value == "") {
+                message.push("メールアドレスが未入力です。");
+            } else if (inputEmail.value.length > 140) {
+                message.push("入力可能文字数は140文字以内です。")
+            }
+
+            if (inputPassword.value == "") {
+                message.push("パスワードが未入力です。");
+            } else if (inputPassword.value.length < 8) {
+                message.push("パスワードは８文字以上です。")
+            }
+
+            if (message.length > 0) {
+                alert(message);
+                return;
+            }
+            document.create.submit();
+        });
+    }
+</script>
+
 <style scoped>
     .login-page {
         display: flex;

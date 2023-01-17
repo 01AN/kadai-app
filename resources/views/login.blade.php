@@ -39,40 +39,40 @@
         display: flex;
         justify-content: center;
     }
-    
+
     .login-page .title {
         font-size: 24px;
         font-weight: bold;
         text-align: center;
     }
-    
+
     .login-page .form {
         width: 60vw;
     }
-    
+
     .login-page input {
         height: 30px;
         border-radius: 10px;
         background-color: lightgray;
     }
-    
+
     .login-page .form-item {
         display: flex;
         flex-direction: column;
         margin-top: 10px;
     }
-    
+
     .login-page .login-button {
         text-align: center;
         margin-top: 10px;
     }
-    
+
     .login-page button {
         width: 50%;
         height: 30px;
         font-size: 18px;
     }
-    
+
     .login-page .error-message {
         margin-top: 5px;
         font-size: 10px;
