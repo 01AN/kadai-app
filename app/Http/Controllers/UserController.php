@@ -148,6 +148,8 @@ class UserController extends Controller
 
         $user->save();
 
+        Session::put('user', $user);
+
         return redirect('/');
     }
 }

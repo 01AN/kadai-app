@@ -52,6 +52,8 @@
         const inputName = document.getElementById('name');
         const inputEmail = document.getElementById('email');
         const inputPassword = document.getElementById('password');
+        const regMail = /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}.[A-Za-z0-9]{1,}$/;
+        const regPass = /[A-Za-z0-9_.-]/;
 
         postbtnSubmit.addEventListener('click', function (event) {
             let message = [];
@@ -62,14 +64,18 @@
 
             if (inputEmail.value == "") {
                 message.push("メールアドレスが未入力です。");
+            } else if (!regMail.test(inputEmail.value)) {
+                message.push("入力されたメールアドレスの形態が無効です")
             } else if (inputEmail.value.length > 140) {
                 message.push("入力可能文字数は140文字以内です。")
             }
 
             if (inputPassword.value == "") {
                 message.push("パスワードが未入力です。");
+            } else if (!regPass.test(inputPassword.value)) {
+                message.push("パスワードは半角英数字、記号のみで入力してください");
             } else if (inputPassword.value.length < 8) {
-                message.push("パスワードは８文字以上です。")
+                message.push("パスワードは８文字以上です。");
             }
 
             if (message.length > 0) {
