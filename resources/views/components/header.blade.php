@@ -51,36 +51,36 @@
         position: fixed;
         top: 0;
     }
-    
+
     header .logo {
         font-size: 25px;
         font-weight: bold;
     }
-    
+
     header .user-icon {
         width: 40px;
         height: 40px;
     }
-    
+
     header .user {
         display: flex;
         font-size: 16px;
     }
-    
+
     header .username {
         line-height: 40px;
     }
-    
+
     header .logout {
         font-size: 12px;
         text-align: end;
     }
-    
+
     header .menu {
         display: flex;
         font-size: 12px;
     }
-    
+
     header .menu-item {
         margin: 0 3px;
         padding: 3px;

@@ -11,6 +11,9 @@
 
 <body>
     <footer>
+        <form action="/search" methot="get">
+            <button class="button-white" type="submit">ユーザー検索</button>
+        </form>
         <form action="/post" methot="get">
             <button class="button-white" type="submit">投稿する</button>
         </form>
@@ -29,7 +32,7 @@
         justify-content: end;
         align-items: center;
     }
-    
+
     footer button {
         margin-right: 10px;
     }

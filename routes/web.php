@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\FollowController;
+use App\Http\Controllers\SearchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -89,3 +90,13 @@ Route::get('/signup', [UserController::class, 'create']);
 
 /** 新規登録処理 */
 Route::post('/signup', [UserController::class, 'store']);
+
+/*-------------------------------------------------------------------------
+| 検索
+| -------------------------------------------------------------------------
+*/
+/** 検索画面遷移 */
+Route::get('/search', [SearchController::class, 'create']);
+
+/** 検索処理 */
+Route::get('/search/{id}', [SearchController::class, 'store']);
