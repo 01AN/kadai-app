@@ -99,4 +99,4 @@ Route::post('/signup', [UserController::class, 'store']);
 Route::get('/search', [SearchController::class, 'create']);
 
 /** 検索処理 */
-Route::get('/search/{id}', [SearchController::class, 'store']);
+Route::post('/search', [SearchController::class, 'store']);

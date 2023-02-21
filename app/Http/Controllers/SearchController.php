@@ -28,7 +28,24 @@ class SearchController extends Controller
 
     function store(Request $request)
     {
-        //
+        $keyword = $request->input('keyword');
+        
+        $user = User::all();
+        
+        if(!empty($keyword)){
+            $query = User::query();
+
+            $query->where('name','like', '%' .$keyword. '%');
+
+            $user = $query->get();
+
+            return view('search.index')
+            ->with([
+                'users' => $users,
+                'keyword' => $keyword,
+            ]);
+        }
+
     }
 
     public function show($id)

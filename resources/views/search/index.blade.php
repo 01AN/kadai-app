@@ -11,15 +11,15 @@
 </head>
 <!-- プロフィール編集画面 -->
 
-<body class="">
+<body class="user-page">
     <x-header></x-header>
     <div class="page user-edit-page">
         <form action="/search" method="get">
             @csrf @method('GET')
             <div class="user-info">
                 <div class="user-name">
-                    <label for="name">ユーザー名</label>
-                    <input class="name" type="text" placeholder="ユーザー名を入力" name="username" id="keyword" />
+                    <label for="keyword">ユーザー検索</label>
+                    <input type="text" id="keyword" name="keyword" value="{{$keyword}}" placeholder="ユーザーネームを入力してください">
                 </div>
             </div>
             <div class="search-button">
@@ -55,6 +55,13 @@
         display: flex;
         flex-direction: column;
         margin-bottom: 10px;
+    }
+
+    .user-page .title {
+        font-size: 18px;
+        font-weight: bold;
+        color: gray;
+        margin-bottom: 6px;
     }
 
     .user-edit-page .search-button {
