@@ -26,9 +26,7 @@
                 <button class="button-white" id="search">検索</button>
             </div>
         </form>
-        <div class="user-name">
-            <label for="name">検索結果</label>
-        </div>
+        <div class="title">検索結果</div>
     </div>
 </body>
 <script>
